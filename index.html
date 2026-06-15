@@ -1,0 +1,579 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>奈落鯖 with Minecraft - コマンドWiki</title>
+
+<style>
+:root{
+    --bg:#0f1117;
+    --card:#181c25;
+    --accent:#00c6ff;
+    --accent2:#ff00c8;
+    --text:#ffffff;
+    --sub:#bdbdbd;
+}
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    background:var(--bg);
+    color:var(--text);
+    font-family:"Segoe UI",sans-serif;
+    line-height:1.7;
+}
+
+header{
+    text-align:center;
+    padding:60px 20px;
+    background:linear-gradient(135deg,var(--accent),var(--accent2));
+}
+
+header h1{
+    font-size:3rem;
+}
+
+header p{
+    opacity:.9;
+}
+
+nav{
+    position:sticky;
+    top:0;
+    background:#0d1016ee;
+    backdrop-filter:blur(10px);
+    padding:15px;
+    text-align:center;
+    z-index:999;
+}
+
+nav a{
+    color:white;
+    text-decoration:none;
+    margin:0 12px;
+    font-weight:bold;
+}
+
+.container{
+    max-width:1200px;
+    margin:auto;
+    padding:30px;
+}
+
+.section{
+    margin-bottom:50px;
+}
+
+.section h2{
+    margin-bottom:20px;
+    border-left:5px solid var(--accent);
+    padding-left:12px;
+}
+
+.command{
+    background:var(--card);
+    border-radius:12px;
+    padding:18px;
+    margin-bottom:15px;
+}
+
+.command code{
+    display:block;
+    color:#6ee7ff;
+    font-size:1.1rem;
+    margin-bottom:8px;
+}
+
+.desc{
+    color:var(--sub);
+}
+
+.search{
+    width:100%;
+    padding:14px;
+    border:none;
+    border-radius:10px;
+    margin-bottom:30px;
+    background:#202531;
+    color:white;
+}
+
+footer{
+    text-align:center;
+    padding:30px;
+    color:#888;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+    <h1>奈落鯖 with Minecraft</h1>
+    <p>コマンドWiki</p>
+</header>
+
+<nav>
+    <a href="#tps">テレポート</a>
+    <a href="#vshop">村人ショップ</a>
+    <a href="#auction">オークション</a>
+    <a href="#money">お金</a>
+    <a href="#mcmmo">mcMMO</a>
+    <a href="#emote">エモート</a>
+    <a href="#block">ブロック保護</a>
+    <a href="#pvp">PvP</a>
+    <a href="#other">その他</a>
+</nav>
+
+<div class="container">
+
+<input
+class="search"
+type="text"
+id="search"
+placeholder="コマンド検索..."
+onkeyup="searchCommands()">
+
+<section id="tps" class="section">
+<h2>テレポート</h2>
+
+<div class="command">
+<code>/sethome &lt;番号&gt;</code>
+<div class="desc">ホームを設定</div>
+</div>
+
+<div class="command">
+<code>/home &lt;番号&gt;</code>
+<div class="desc">ホームへ移動</div>
+</div>
+
+<div class="command">
+<code>/delhome &lt;番号&gt;</code>
+<div class="desc">ホーム削除</div>
+</div>
+
+<div class="command">
+<code>/homes</code>
+<div class="desc">ホーム一覧</div>
+</div>
+
+<div class="command">
+<code>/spawn</code>
+<div class="desc">スポーンへ移動 /sでも可</div>
+</div>
+
+<div class="command">
+<code>/back</code>
+<div class="desc">死亡地点へ戻る</div>
+</div>
+
+<div class="command">
+<code>/ptp &lt;プレイヤー&gt;</code>
+<div class="desc">プレイヤーへテレポート</div>
+</div>
+</section>
+
+<section id="vshop" class="section">
+<h2>村人ショップ</h2>
+
+<div class="command">
+<code>/vshop create &lt;名前&gt;</code>
+<div class="desc">ショップ作成</div>
+</div>
+
+<div class="command">
+<code>/vshop edit &lt;名前&gt;</code>
+<div class="desc">ショップ編集</div>
+</div>
+
+<div class="command">
+<code>/vshop linkchest &lt;名前&gt;</code>
+<div class="desc">チェスト連携</div>
+</div>
+
+<div class="command">
+<code>/vshop rename &lt;名前&gt; &lt;新しい名前&gt;</code>
+<div class="desc">ショップ名変更</div>
+</div>
+
+<div class="command">
+<code>/vshop delete &lt;名前&gt;</code>
+<div class="desc">ショップ削除</div>
+</div>
+
+<div class="command">
+<code>/vshop display &lt;名前&gt; &lt;Mob&gt;</code>
+<div class="desc">見た目変更</div>
+</div>
+</section>
+
+<section id="auction" class="section">
+<h2>オークション</h2>
+
+<div class="command">
+<code>/auction</code>
+<div class="desc">オークション一覧</div>
+</div>
+
+<div class="command">
+<code>/ah menu</code>
+<div class="desc">初心者向けメニュー</div>
+</div>
+
+<div class="command">
+<code>/auction my</code>
+<div class="desc">自分の出品一覧</div>
+</div>
+
+<div class="command">
+<code>/auction sell &lt;価格&gt; [即決価格] &lt;期間&gt;</code>
+<div class="desc">アイテム出品</div>
+</div>
+
+<div class="command">
+<code>/auction bid &lt;ID&gt; &lt;金額&gt;</code>
+<div class="desc">入札</div>
+</div>
+
+<div class="command">
+<code>/auction buyout &lt;ID&gt;</code>
+<div class="desc">即決購入</div>
+</div>
+
+<div class="command">
+<code>/auction cancel &lt;ID&gt;</code>
+<div class="desc">出品取消</div>
+</div>
+
+<div class="command">
+<code>/offget</code>
+<div class="desc">保留アイテム受取</div>
+</div>
+
+<div class="command">
+<code>/auction help</code>
+<div class="desc">ヘルプ表示</div>
+</div>
+</section>
+
+<section id="money" class="section">
+<h2>お金</h2>
+
+<div class="command">
+<code>/money</code>
+<div class="desc">所持金表示</div>
+</div>
+
+<div class="command">
+<code>/money pay &lt;プレイヤー&gt; &lt;金額&gt;</code>
+<div class="desc">お金の送金</div>
+</div>
+
+<div class="command">
+<code>/withdraw &lt;金額&gt; &lt;個数&gt;</code>
+<div class="desc">お金アイテム化</div>
+</div>
+
+</section>
+
+<section id="mcmmo" class="section">
+<h2>mcMMO</h2>
+
+<div class="command">
+<code>/mcrank</code>
+<div class="desc">ランキング表示</div>
+</div>
+
+<div class="command">
+<code>/mcstats</code>
+<div class="desc">統計情報表示</div>
+</div>
+
+<div class="command">
+<code>/mctop</code>
+<div class="desc">トッププレイヤー表示</div>
+</div>
+
+<div class="command">
+<code>/powerlevel</code>
+<div class="desc">パワーレベル表示</div>
+</div>
+
+<div class="command">
+<code>/acrobatics</code>
+<div class="desc">アクロバティックスキル表示</div>
+</div>
+
+<div class="command">
+<code>/alchemy</code>
+<div class="desc">錬金術スキル表示</div>
+</div>
+
+<div class="command">
+<code>/archery</code>
+<div class="desc">弓術スキル表示</div>
+</div>
+
+<div class="command">
+<code>/axes</code>
+<div class="desc">斧スキル表示</div>
+</div>
+
+<div class="command">
+<code>/crossbows</code>
+<div class="desc">クロスボウスキル表示</div>
+</div>
+
+<div class="command">
+<code>/excavation</code>
+<div class="desc">掘削スキル表示</div>
+</div>
+
+<div class="command">
+<code>/fishing</code>
+<div class="desc">釣りスキル表示</div>
+</div>
+
+<div class="command">
+<code>/herbalism</code>
+<div class="desc">薬草学スキル表示</div>
+</div>
+
+<div class="command">
+<code>/maces</code>
+<div class="desc">メイススキル表示</div>
+</div>
+
+<div class="command">
+<code>/mining</code>
+<div class="desc">採掘スキル表示</div>
+</div>
+
+<div class="command">
+<code>/repair</code>
+<div class="desc">修理スキル表示</div>
+</div>
+
+<div class="command">
+<code>/salvage</code>
+<div class="desc">サルベージスキル表示</div>
+</div>
+
+<div class="command">
+<code>/smelting</code>
+<div class="desc">精錬スキル表示</div>
+</div>
+
+<div class="command">
+<code>/swords</code>
+<div class="desc">剣スキル表示</div>
+</div>
+
+<div class="command">
+<code>/taming</code>
+<div class="desc">調教スキル表示</div>
+</div>
+
+<div class="command">
+<code>/trident</code>
+<div class="desc">トライデントスキル表示</div>
+</div>
+
+<div class="command">
+<code>/unarmed</code>
+<div class="desc">素手スキル表示</div>
+</div>
+
+<div class="command">
+<code>/woodcutting</code>
+<div class="desc">木こりスキル表示</div>
+</div>
+
+<div class="command">
+<code>/party</code>
+<div class="desc">パーティ機能</div>
+</div>
+
+<div class="command">
+<code>/pc</code>
+<div class="desc">パーティーチャット</div>
+</div>
+
+<section id="emote" class="section">
+<h2>エモート</h2>
+
+<div class="command">
+<code>/sit</code>
+<div class="desc">座る</div>
+</div>
+
+<div class="command">
+<code>/crawl</code>
+<div class="desc">クロール</div>
+</div>
+
+<div class="command">
+<code>/spin</code>
+<div class="desc">回転</div>
+</div>
+
+<div class="command">
+<code>/lay</code>
+<div class="desc">横たわる</div>
+</div>
+
+<div class="command">
+<code>/bellyflop</code>
+<div class="desc">ベリーフロップ</div>
+</div>
+
+<section id="block" class="section">
+<h2>ブロック保護</h2>
+
+<div class="command">
+<code>/lwc</code>
+<div class="desc">ヘルプを表示</div>
+</div>
+
+<div class="command">
+<code>/cinfo</code>
+<div class="desc">対象物の状態を表示</div>
+</div>
+
+<div class="command">
+<code>/climits</code>
+<div class="desc">現在の保護数と制限数を表示</div>
+</div>
+
+<div class="command">
+<code>/cprivate [プレイヤー1] [プレイヤー2] ...</code>
+<div class="desc">自分と指定したプレイヤーのみを可能</div>
+</div>
+
+<div class="command">
+<code>/cpublic</code>
+<div class="desc">すべてのプレイヤーを許可~他プレイヤーによる設定変更を防止</div>
+</div>
+
+<div class="command">
+<code>/cdonation</code>
+<div class="desc">自分のみアイテムの取り出しを許可~寄付用チェストの作成</div>
+</div>
+
+<div class="command">
+<code>/cpassword [パスワード]</code>
+<div class="desc">パスワードを知っているプレイヤーのみを許可</div>
+</div>
+
+<div class="command">
+<code>/cunlock [パスワード]</code>
+<div class="desc">パスワードでアクセス</div>
+</div>
+
+<div class="command">
+<code>/cmodify [プレイヤー1] [プレイヤー2] ...</code>
+<div class="desc">アクセスを許可するプレイヤーを追加</div>
+</div>
+
+<div class="command">
+<code>/cmodify @[プレイヤー名]</code>
+<div class="desc">オーナー追加</div>
+</div>
+
+<div class="command">
+<code>/cmodify g:[グループ名]</code>
+<div class="desc">権限グループ追加</div>
+</div>
+
+<div class="command">
+<code>/cmodify -[プレイヤー名]</code>
+<div class="desc">アクセスを許可するプレイヤーを削除</div>
+</div>
+
+<div class="command">
+<code>/cpersist</code>
+<div class="desc">連続設定のON/OFF 入力後に連続設定したいコマンドを入力して下さい。</div>
+</div>
+
+<div class="command">
+<code>/cremove</code>
+<div class="desc">登録を解除(/unlockでも可)</div>
+</div>
+
+<div class="command">
+<code>/cremoveall</code>
+<div class="desc">全ての登録を解除 入力後に表示されるメッセージに従って下さい。</div>
+</div>
+
+<section id="pvp" class="section">
+<h2>PvP</h2>
+
+<div class="command">
+<code>/pvp</code>
+<div class="desc">PvP機能のON/OFF</div>
+</div>
+
+<div class="command">
+<code>/pvplist</code>
+<div class="desc">PvP対象者一覧を表示</div>
+</div>
+
+<div class="command">
+<code>/pvpinfo [プレイヤー名]</code>
+<div class="desc">指定したプレイヤーのPvP情報を表示</div>
+</div>
+
+<section id="other" class="section">
+<h2>その他</h2>
+
+<div class="command">
+<code>/jobs</code>
+<div class="desc">ジョブの統計・ランキング・情報を表示する</div>
+</div>
+
+<div class="command">
+<code>/hat</code>
+<div class="desc">手に持ったアイテムを頭に着ける</div>
+</div>
+
+</section>
+
+</div>
+
+<footer>
+© 2026 奈落鯖 with Minecraft
+</footer>
+
+<script>
+function searchCommands() {
+
+let input =
+document.getElementById("search")
+.value.toLowerCase();
+
+let commands =
+document.querySelectorAll(".command");
+
+commands.forEach(cmd => {
+
+let text =
+cmd.innerText.toLowerCase();
+
+if(text.includes(input)){
+cmd.style.display="block";
+}else{
+cmd.style.display="none";
+}
+
+});
+}
+</script>
+
+</body>
+</html>
