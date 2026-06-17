@@ -109,6 +109,85 @@ footer{
     padding:30px;
     color:#888;
 }
+
+.plugin-table{
+    width:100%;
+    border-collapse:collapse;
+    background:var(--card);
+}
+
+.plugin-table th{
+    background:#202531;
+    padding:12px;
+    text-align:left;
+}
+
+.plugin-table td{
+    padding:12px;
+    border-top:1px solid #2a3040;
+}
+
+.plugin-table tr:hover{
+    background:#202531;
+}
+
+.toc{
+    max-width:1200px;
+    margin:30px auto;
+    padding:0 30px;
+}
+
+.toc h2{
+    margin-bottom:20px;
+    border-left:5px solid var(--accent);
+    padding-left:12px;
+}
+
+.toc-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
+    gap:15px;
+}
+
+.toc-card{
+    background:var(--card);
+    color:white;
+    text-decoration:none;
+    text-align:center;
+    padding:25px;
+    border-radius:12px;
+    font-size:1.1rem;
+    transition:.2s;
+}
+
+.toc-card:hover{
+    transform:translateY(-4px);
+    background:#202531;
+}
+
+.guide-card{
+    background:var(--card);
+    border-left:5px solid var(--accent);
+    border-radius:12px;
+    padding:18px;
+    margin-bottom:15px;
+    transition:.2s;
+}
+
+.guide-card:hover{
+    transform:translateY(-2px);
+}
+
+.guide-title{
+    color:#6ee7ff;
+    font-size:1.1rem;
+    font-weight:bold;
+    margin-bottom:8px;
+}
+
+.guide-desc{
+    color:var(--sub);
+}
 </style>
 </head>
 
@@ -139,6 +218,93 @@ type="text"
 id="search"
 placeholder="コマンド検索..."
 onkeyup="searchCommands()">
+
+<section class="toc">
+
+<h2>目次</h2>
+
+<div class="toc-grid">
+
+<a href="#plugins" class="toc-card">
+<br>
+<h3>導入プラグイン一覧</h3>
+</a>
+
+<a href="#tps" class="toc-card">
+<br>
+<h3>テレポート</h3>
+</a>
+
+<a href="#vshop" class="toc-card">
+<br>
+<h3>村人ショップ</h3>
+</a>
+
+<a href="#auction" class="toc-card">
+<br>
+<h3>オークション</h3>
+</a>
+
+<a href="#money" class="toc-card">
+<br>
+<h3>お金</h3>
+</a>
+
+<a href="#mcmmo" class="toc-card">
+<br>
+<h3>mcMMO</h3>
+</a>
+
+<a href="#emote" class="toc-card">
+<br>
+<h3>エモート</h3>
+</a>
+
+<a href="#block" class="toc-card">
+<br>
+<h3>ブロック保護</h3>
+</a>
+
+<a href="#pvp" class="toc-card">
+<br>
+<h3>PvP</h3>
+</a>
+
+<a href="#other" class="toc-card">
+<br>
+<h3>その他</h3>
+</a>
+
+</div>
+
+</section>
+
+<section id="guide" class="section">
+
+<h2>固定情報</h2>
+
+<div class="guide-card">
+    <div class="guide-title">サーバーバージョン</div>
+    <div class="guide-desc">
+        Java 1.21.8~ / 統合版対応
+    </div>
+</div>
+
+<div class="guide-card">
+    <div class="guide-title">対応機種</div>
+    <div class="guide-desc">
+        Java Edition・Bedrock Edition
+    </div>
+</div>
+
+<div class="guide-card">
+    <div class="guide-title">サーバールール</div>
+    <div class="guide-desc">
+        荒らし・チート・過度な嫌がらせは禁止です
+    </div>
+</div>
+
+</section>
 
 <section id="tps" class="section">
 <h2>テレポート</h2>
@@ -542,6 +708,112 @@ onkeyup="searchCommands()">
 <div class="desc">手に持ったアイテムを頭に着ける</div>
 </div>
 
+</section>
+
+<section id="plugins" class="section">
+<h2>導入プラグイン一覧</h2>
+
+<div style="overflow-x:auto;">
+<table class="plugin-table">
+
+<tr>
+<th>プラグイン名</th>
+<th>カテゴリ</th>
+<th>説明</th>
+</tr>
+
+<tr>
+<td>VShop</td>
+<td>経済</td>
+<td>村人ショップシステム</td>
+</tr>
+
+<tr>
+<td>NAuction</td>
+<td>経済</td>
+<td>オークションシステム</td>
+</tr>
+
+<tr>
+<td>Jecon</td>
+<td>経済</td>
+<td>経済システム</td>
+</tr>
+
+<tr>
+<td>Coins</td>
+<td>経済</td>
+<td>お金アイテム化</td>
+</tr>
+
+<tr>
+<td>uJobs</td>
+<td>経済・育成</td>
+<td>職業システム</td>
+</tr>
+
+<tr>
+<td>mcMMO</td>
+<td>育成</td>
+<td>スキル・レベルシステム</td>
+</tr>
+
+<tr>
+<td>WeaponMechanics</td>
+<td>PvP・銃</td>
+<td>銃追加</td>
+</tr>
+
+<tr>
+<td>WeaponMechanicsCosmetics</td>
+<td>プラグイン拡張</td>
+<td>銃追加</td>
+</tr>
+
+<tr>
+<td>WeaponMechanicsPlus</td>
+<td>プラグイン拡張</td>
+<td>銃追加</td>
+</tr>
+
+<tr>
+<td>PvPManager</td>
+<td>PvP</td>
+<td>PvP管理機能</td>
+</tr>
+
+<tr>
+<td>ShulkerPacks</td>
+<td>バニラ拡張</td>
+<td>インベントリや空中でシュルカーボックスを開ける</td>
+</tr>
+
+<tr>
+<td>LWC Extended</td>
+<td>保護</td>
+<td>チェスト・ドア保護</td>
+</tr>
+
+<tr>
+<td>GSit</td>
+<td>エモート</td>
+<td>座る・寝る・クロール</td>
+</tr>
+
+<tr>
+<td>TPs</td>
+<td>移動</td>
+<td>ホーム・スポーン機能</td>
+</tr>
+
+<tr>
+<td>Hat</td>
+<td>装飾</td>
+<td>頭にアイテムを着ける</td>
+</tr>
+
+</table>
+</div>
 </section>
 
 </div>
